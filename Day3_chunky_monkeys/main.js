@@ -22,6 +22,18 @@ function chunkyMonkey(values, size) {
   return result;
 }
 
+/* Another Brilliant solution from my friend!
+This seems way more efficient and elegant than mine above..*/
+function chunkyMonkey2(values, size) {
+  let arr = [];
+  for (i = 0; i < values.length; i += size) {
+    const res = values.slice(i, i + size);
+    arr.push(res);
+  }
+  console.log(arr);
+  return arr;
+}
+
 /**
  * Test Suite
  */
