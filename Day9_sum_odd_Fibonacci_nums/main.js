@@ -19,21 +19,18 @@ less than or equal to 10 are 1,1,3, and 5.
 
 */
 function sumOddFibonacciNumbers(num) {
-  let result = 1;
-  let num1 = 1;
-  let num2 = 0;
-  for (let i = 0; i <= num; i++) {
-    if (i % 2 == 1) {
-      num1 = i;
+  // write code here
+  let result = 0;
+  let prev = 0;
+  let current = 1;
+
+  while (current <= num) {
+    if (current % 2 === 1) {
+      result += current;
     }
-    for (let j = i; j <= i; j++) {
-      if (j % 2 == 1) {
-        num2 = j;
-      }
-    }
-    if ((i + j) % 2 == 1) {
-      result += i + j;
-    }
+    const nextVal = current + prev;
+    prev = current;
+    current = nextVal;
   }
   return result;
 }
