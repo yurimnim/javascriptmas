@@ -1,10 +1,13 @@
 /*
 -- Day 10 --
+Given an array of integers, find the pair of adjacent elements that has the largest produc
+and return that product.
 
 -- Example --
- - sumOddFibonacciNums(10) should return 10
- - sumOddFibonacciNums(1000) should return 1785
- - sumOddFibonacciNums(4000000) should return 4613732
+For inputArray = [3, 6, -2, -5, 7, 3], 
+the output should be adjacentElementsProduct(inputArray) = 21.
+
+7 and 3 produce the largest product. 
 
 */
 
