@@ -16,6 +16,13 @@ function extractEachKth(nums, index) {
   return result;
 }
 
+//Scrimba's solution (I like my solution better...
+// This method only works when the values of the array are consecutive numbers.🤷‍♀️ Why Scrimba? )
+function extractEachKth2(nums, index) {
+  //  write code here.
+  return nums.filter((value, i) => (i + 1) % input !== 0);
+}
+
 /**
  * Test Suite
  */
