@@ -1,47 +1,54 @@
 /*
--- Day 20 --
-Domain Type
+-- Day 22 --
+Extract Matrix Column
 
-GoDaddy makes a lot of different top-level domains available to its customers.
-A top-level domain is one that goes directly after the last dot('.') in the domain name,
-for example, .com in example.com. To help the users choose from available domains,
-GoDaddy is introducing a new feature that shows the type of the chosen top-level domain.
-You have to implement this feature. To begin with, you want to write a function that
-labels the domains as "commercial", "organization", "network" or "information" for .com,
-.org, .net, or .info respectively. For the given list of domains return the list of their labels. 
+Given a rectangular matrix and an integer column, 
+return an array contraining the elements
+of the columnth column of the given matrix 
+(the leftmost column is the 0th one)
 
 -- Example --
-- for domains ["en.wiki.org" "codefights.com", "happy.net", "code.info"],
-the output should be 
-domainType(domains) = ["organization", "commercial", "network", "information"].
-
+For matrix = [[1,1,1,2],[0,5,0,4],[2,1,3,6]] and column = 2, 
+the output should be extractMatrixColumn(matrix, column) = [1,0,3]
 */
 
 //My Solution
-function domainType(domains) {
+function extractMatrixColumn(matrix, column) {
   //  write code here.
+  const result = [];
+
+  for (let eachArray of matrix) {
+    result.push(eachArray[column]);
+  }
+  return result;
+}
+
+//Solution by Scrimba
+function extractMatrixColumn2(matrix, column) {
+  //  write code here.
+  return matrix.map(row => row[column]);
 }
 
 /**
  * Test Suite
  */
-describe('domainType()', () => {
-  it('returns list of domain types', () => {
+describe('extractMatrixColumn()', () => {
+  it('returns largest positive integer possible for digit count', () => {
     // arrange
-    const domains = ['en.wiki.org', 'codefights.com', 'happy.net', 'code.info'];
+    const matrix = [
+      [1, 1, 1, 2],
+      [0, 5, 0, 4],
+      [2, 1, 3, 6],
+    ];
+    const column = 2;
 
     // act
-    const result = domainType(domains);
+    const result = extractMatrixColumn(matrix, column);
 
     // log
     console.log('result: ', result);
 
     // assert
-    expect(result).toEqual([
-      'organization',
-      'commercial',
-      'network',
-      'information',
-    ]);
+    expect(result).toEqual([1, 0, 3]);
   });
 });
